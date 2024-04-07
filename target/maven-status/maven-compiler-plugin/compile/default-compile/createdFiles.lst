@@ -1,2 +1,3 @@
-com\mycompany\taller1\resources\JakartaEE8Resource.class
 com\mycompany\taller1\JakartaRestConfiguration.class
+servlets\SvUsuarios.class
+com\mycompany\taller1\resources\JakartaEE8Resource.class
