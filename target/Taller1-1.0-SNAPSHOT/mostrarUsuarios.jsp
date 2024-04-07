@@ -18,14 +18,15 @@
 
         
         <%
-            <!--
+            /*
                 se declara una lista de tipo usuarios, en la cual se guarda
                 los usuarios que se obtienen de la base de datos 
-             -->
+             */
+             
             List<Usuario> listaUsuarios = (List) request.getSession().getAttribute("listaUsuarios");
             int i = 1; 
 
-            <!-- Ciclo para recorrer la lista y mostrara los usuarios -->
+            /* Ciclo para recorrer la lista y mostrara los usuarios */
             for(Usuario usuario : listaUsuarios){
 
         %>
