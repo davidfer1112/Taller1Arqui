@@ -1,8 +1,17 @@
 package logica;
 
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-public class Usuario {
+@Entity
+public class Usuario implements Serializable {
 
+    @Id
+    @GeneratedValue (strategy = GenerationType.AUTO)
+    private int id;
     private String cc;
     private String nombre;
     private String apellido;
@@ -11,12 +20,23 @@ public class Usuario {
     public Usuario(){
     }
 
-    public Usuario(String cc, String nombre, String apellido, String telefono) {
+    public Usuario(int id, String cc, String nombre, String apellido, String telefono) {
+        this.id = id;
         this.cc = cc;
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    
 
     public String getCc() {
         return cc;

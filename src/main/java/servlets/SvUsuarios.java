@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.ArrayList;
 import logica.Usuario;
 import javax.servlet.http.HttpSession;
+import logica.Controller;
 
 
 /**
@@ -23,6 +24,8 @@ import javax.servlet.http.HttpSession;
  */
 @WebServlet(name = "SvUsuarios", urlPatterns = {"/SvUsuarios"})
 public class SvUsuarios extends HttpServlet {
+//intancia de la clase Controller
+Controller control = new Controller();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -35,10 +38,14 @@ public class SvUsuarios extends HttpServlet {
             throws ServletException, IOException {
         
         // Crear una lista de usuarios para emular una base de datos
+        // List<Usuario> listaUsuarios = new ArrayList<>();
+        // listaUsuarios.add(new Usuario("123", "Juan", "Perez", "1234567"));
+        // listaUsuarios.add(new Usuario("456", "Maria", "Lopez", "7654321"));
+        // listaUsuarios.add(new Usuario("789", "Pedro", "Gomez", "9876543"));
+        
+        // Con base de datos
         List<Usuario> listaUsuarios = new ArrayList<>();
-        listaUsuarios.add(new Usuario("123", "Juan", "Perez", "1234567"));
-        listaUsuarios.add(new Usuario("456", "Maria", "Lopez", "7654321"));
-        listaUsuarios.add(new Usuario("789", "Pedro", "Gomez", "9876543"));
+        listaUsuarios = control.traerUsuarios();
         
         // Crear una sesion para enviar la lista de usuarios a la vista
         HttpSession sesion = request.getSession();
@@ -59,12 +66,22 @@ public class SvUsuarios extends HttpServlet {
         String nombre = request.getParameter("nombre");
         String apellido = request.getParameter("apellido");
         String telefono = request.getParameter("telefono");
+
+        // Crea un objeto de tipo Usuario y se le asignan los valores
+        Usuario usu = new Usuario();
+        usu.setCc(cc);
+        usu.setNombre(nombre);
+        usu.setApellido(apellido);
+        usu.setTelefono(telefono);
+ 
+        //se pasa el objeto al controller (Logica)
+        control.crearUsuario(usu);
         
         // Muestra por consola la captura de los datos
-        System.out.println("Cedula: " + cc);
-        System.out.println("Nombre: " + nombre);
-        System.out.println("Apellido: " + apellido);
-        System.out.println("Telefono: " + telefono);                 
+        // System.out.println("Cedula: " + cc);
+        // System.out.println("Nombre: " + nombre);
+        // System.out.println("Apellido: " + apellido);
+        // System.out.println("Telefono: " + telefono);                 
     }
 
     
