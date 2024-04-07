@@ -11,6 +11,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
+import java.util.ArrayList;
+import logica.Usuario;
+import javax.servlet.http.HttpSession;
+
 
 /**
  *
@@ -28,22 +33,38 @@ public class SvUsuarios extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        
+        // Crear una lista de usuarios para emular una base de datos
+        List<Usuario> listaUsuarios = new ArrayList<>();
+        listaUsuarios.add(new Usuario("123", "Juan", "Perez", "1234567"));
+        listaUsuarios.add(new Usuario("456", "Maria", "Lopez", "7654321"));
+        listaUsuarios.add(new Usuario("789", "Pedro", "Gomez", "9876543"));
+        
+        // Crear una sesion para enviar la lista de usuarios a la vista
+        HttpSession sesion = request.getSession();
+        sesion.setAttribute("listaUsuarios", listaUsuarios);
+        
+        // Redireccionar a la vista
+        response.sendRedirect("mostrarUsuarios.jsp");
+
     }
 
    
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+
+        // Captura los datos del que se envian desde el formulario
         String  cc = request.getParameter("CC");
         String nombre = request.getParameter("nombre");
         String apellido = request.getParameter("apellido");
         String telefono = request.getParameter("telefono");
-
+        
+        // Muestra por consola la captura de los datos
         System.out.println("Cedula: " + cc);
         System.out.println("Nombre: " + nombre);
         System.out.println("Apellido: " + apellido);
-        System.out.println("Telefono: " + telefono);
+        System.out.println("Telefono: " + telefono);                 
     }
 
     
