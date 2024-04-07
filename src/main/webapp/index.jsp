@@ -1,9 +1,3 @@
-<%-- 
-    Document   : index
-    Created on : 6/04/2024, 6:34:24 p. m.
-    Author     : User
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
