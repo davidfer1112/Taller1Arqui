@@ -44,6 +44,23 @@ public class SvEditar extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+        // Captura los datos del que se envian desde el formulario
+        String  cc = request.getParameter("CC");
+        String nombre = request.getParameter("nombre");
+        String apellido = request.getParameter("apellido");
+        String telefono = request.getParameter("telefono");
+
+        // Modificar datos del usuario
+        Usuario usu = (Usuario) request.getSession().getAttribute("usuEditar");
+        usu.setCc(cc);
+        usu.setNombre(nombre);
+        usu.setApellido(apellido);
+        usu.setTelefono(telefono);
+ 
+        //se pasa el objeto al controller (Logica)
+        control.editarUsuario(usu);
+        
+        response.sendRedirect("index.jsp");
 
     }
 

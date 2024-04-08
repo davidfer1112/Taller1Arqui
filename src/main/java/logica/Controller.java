@@ -26,5 +26,13 @@ public class Controller {
     public void borrarUsuario(int id_eliminar) {
         controlper.borrarUsuario(id_eliminar);
     }
+
+    public Usuario traerUsuario(int id_editar) {
+        return controlper.traerUsuario(id_editar);
+    }
+
+    public void editarUsuario(Usuario usu) {
+        controlper.editarUsuario(usu);
+    }
     
 }

@@ -42,7 +42,7 @@
         <p>Ingresar el id para editar</p>
         <form action="SvEditar" method="GET">
             <p><label>Id: </label><input type="text" name="id_usuarioEdit" required></p>
-            <button type="submit">Eliminar Editar</button>
+            <button type="submit">Editar</button>
         </form>
 
     </body>
