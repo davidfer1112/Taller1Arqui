@@ -22,5 +22,9 @@ public class Controller {
     public List <Usuario> traerUsuarios(){
         return controlper.traerUsuarios();
     }
+
+    public void borrarUsuario(int id_eliminar) {
+        controlper.borrarUsuario(id_eliminar);
+    }
     
 }

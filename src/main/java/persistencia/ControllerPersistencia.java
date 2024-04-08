@@ -5,7 +5,10 @@
 package persistencia;
 
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import logica.Usuario;
+import persistencia.exceptions.NonexistentEntityException;
 
 /**
  *
@@ -16,15 +19,24 @@ public class ControllerPersistencia {
     UsuarioJpaController usuJpa = new UsuarioJpaController ();
     
     
-    //Operacion create
+    //Metodo para crear usuarios
     public void crearUsuario (Usuario usu){
         
         usuJpa.create(usu);
     }
     
-    //Operacion Read
+    //Metodo para leer los usuarios
     public List<Usuario> traerUsuarios (){
         return usuJpa.findUsuarioEntities();
+    }
+    
+    //Metodo para borrar usuarios
+    public void borrarUsuario(int id_eliminar) {
+        try {
+            usuJpa.destroy(id_eliminar);
+        } catch (NonexistentEntityException ex) {
+            Logger.getLogger(ControllerPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 }

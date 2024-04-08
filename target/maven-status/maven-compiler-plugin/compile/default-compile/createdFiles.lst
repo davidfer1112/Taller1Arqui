@@ -1,11 +1,12 @@
-persistencia\UsuarioJpaController.class
 com\mycompany\taller1\JakartaRestConfiguration.class
+logica\Usuario.class
+persistencia\ControllerPersistencia.class
+servlets\SvEliminar.class
+logica\Usuario_.class
+persistencia\UsuarioJpaController.class
 servlets\SvUsuarios.class
 com\mycompany\taller1\resources\JakartaEE8Resource.class
-logica\Usuario.class
 logica\Controller.class
 persistencia\exceptions\NonexistentEntityException.class
 persistencia\exceptions\PreexistingEntityException.class
-persistencia\ControllerPersistencia.class
 persistencia\exceptions\IllegalOrphanException.class
-logica\Usuario_.class

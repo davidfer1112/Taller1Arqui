@@ -10,7 +10,7 @@ import javax.persistence.Id;
 public class Usuario implements Serializable {
 
     @Id
-    @GeneratedValue (strategy = GenerationType.AUTO)
+    @GeneratedValue (strategy = GenerationType.TABLE) // para que se genere secuencialmente
     private int id;
     private String cc;
     private String nombre;

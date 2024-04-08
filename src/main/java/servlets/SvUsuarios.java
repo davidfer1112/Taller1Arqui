@@ -76,6 +76,9 @@ Controller control = new Controller();
  
         //se pasa el objeto al controller (Logica)
         control.crearUsuario(usu);
+
+
+        response.sendRedirect("index.jsp");
         
         // Muestra por consola la captura de los datos
         // System.out.println("Cedula: " + cc);

@@ -30,8 +30,10 @@
             for(Usuario usuario : listaUsuarios){
 
         %>
-
+        
             <h2>Nuermo de Usuario <%= i %> </h2>
+            
+            <p><strong>Id: <%= usuario.getId()%> </strong></p>
             <p>CC: <%= usuario.getCc()%></p>
             <p>Nombre: <%= usuario.getNombre() %></p>
             <p>Apellido: <%= usuario.getApellido() %></p>

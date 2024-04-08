@@ -30,6 +30,20 @@
             <button type="submit">Ver Usuarios</button>
         </form>
         
+        <h1>Usuario para elimiar</h1>
+        <p>Ingresar el id para eliminar</p>
+        <form action="SvEliminar" method="POST">
+            <p><label>Id: </label><input type="text" name="id_usuario" required></p>
+            <button type="submit">Eliminar Usuario</button>
+        </form>
+        
+
+        <h1>Usuario para editar</h1>
+        <p>Ingresar el id para editar</p>
+        <form action="SvEditar" method="GET">
+            <p><label>Id: </label><input type="text" name="id_usuarioEdit" required></p>
+            <button type="submit">Eliminar Editar</button>
+        </form>
 
     </body>
 </html>
