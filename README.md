@@ -1,4 +1,4 @@
-
+ 
 # Taller 1: Arquitectura de Software con Jakarta EE
 
 ## Descripción General
